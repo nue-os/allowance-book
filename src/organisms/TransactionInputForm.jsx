@@ -17,7 +17,7 @@ const TransactionInputForm = () => {
 
   const handleSubmit = () => {
     addItem({
-      text: transactionAmount,
+      text: trasactionText,
       type: transactionType,
       amount: transactionAmount,
     })

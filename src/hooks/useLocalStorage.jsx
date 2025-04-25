@@ -7,6 +7,7 @@ const useLocalStorage = key => {
       return stored ? JSON.parse(stored) : []
     } catch (err) {
       console.log('[error] ', err)
+      return []
     }
   }, [key])
 
