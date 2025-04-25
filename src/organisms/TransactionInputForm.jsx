@@ -2,18 +2,26 @@ import React, { useState } from 'react'
 import css from './TransactionInputForm.module.css'
 import RadioButton from '../components/RadioButton'
 import InputField from '../components/InputField'
+import useLocalStorage from '../hooks/useLocalStorage'
 
 const TransactionInputForm = () => {
-  const [trasactionContents, setTransactionContents] = useState('')
+  const { addItem } = useLocalStorage('myData')
+
+  const [trasactionText, setTransactionText] = useState('')
   const [transactionType, setTransactionType] = useState('income')
   const [transactionAmount, setTransactionAmount] = useState('')
 
-  const handleContentsChange = e => setTransactionContents(e.target.value)
+  const handleContentsChange = e => setTransactionText(e.target.value)
   const handleRadioChange = e => setTransactionType(e.target.value)
   const handleAmountChange = e => setTransactionAmount(e.target.value)
 
   const handleSubmit = () => {
-    setTransactionContents('')
+    addItem({
+      text: transactionAmount,
+      type: transactionType,
+      amount: transactionAmount,
+    })
+    setTransactionText('')
     setTransactionType('income')
     setTransactionAmount('')
   }
@@ -25,7 +33,7 @@ const TransactionInputForm = () => {
         <InputField
           label="텍스트"
           id="contents"
-          value={trasactionContents}
+          value={trasactionText}
           placeholder="내용을 입력해 주세요."
           onChange={handleContentsChange}
         />
