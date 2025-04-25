@@ -4,7 +4,12 @@ const MainPage = () => {
   return (
     <main>
       <h1>용돈 기입장</h1>
-      <p>메인 페이지 </p>
+      <section>
+        <div>잔액</div>
+        <div>수입/지출 내역</div>
+        <div>거래 입력 폼</div>
+        <div>거래 내역</div>
+      </section>
     </main>
   )
 }
