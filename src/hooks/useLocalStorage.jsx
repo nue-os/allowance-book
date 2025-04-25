@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
-import { addTransaction } from '../store/transactionsSlice'
+import { addTransaction, removeTransaction } from '../store/transactionsSlice'
 
 const useLocalStorage = key => {
   const dispatch = useDispatch()
@@ -38,6 +38,7 @@ const useLocalStorage = key => {
 
         const filterdList = list.filter(item => item.id !== id)
         localStorage.setItem(key, JSON.stringify(filterdList))
+        dispatch(removeTransaction(id))
       } catch (err) {
         console.log('[error] ', err)
       }
