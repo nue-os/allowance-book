@@ -1,0 +1,30 @@
+.summaryCon {
+  padding: var(--fs16);
+  display: flex;
+  gap: var(--fs12);
+  border-radius: var(--fs16);
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.summaryCon > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  gap: var(--fs8);
+}
+
+.summaryCon > div strong {
+  font-size: var(--fs26);
+}
+.summaryCon > div span {
+  font-size: var(--fs20);
+}
+
+.bar {
+  width: 1px;
+  background-color: gainsboro;
+}

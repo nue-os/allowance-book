@@ -67,7 +67,7 @@ main > section {
   gap: var(--fs33);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   main > section {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 2fr 2fr;

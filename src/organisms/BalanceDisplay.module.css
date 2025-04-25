@@ -1,13 +1,12 @@
 .balanceCon {
-  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--fs8);
   font-weight: bold;
   background-color: white;
-  border: 1px solid skyblue;
   border-radius: var(--fs16);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .balanceCon > strong {
