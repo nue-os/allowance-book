@@ -11,7 +11,13 @@ const TransactionInputForm = () => {
   const [transactionType, setTransactionType] = useState('income')
   const [transactionAmount, setTransactionAmount] = useState('')
 
-  const handleContentsChange = e => setTransactionText(e.target.value)
+  const [errorText, setErrorText] = useState('')
+  const [errorAmount, setErrorAmount] = useState('')
+
+  const handleContentsChange = e => {
+    setTransactionText(e.target.value)
+    setErrorText('')
+  }
   const handleRadioChange = e => setTransactionType(e.target.value)
   const handleAmountChange = e => {
     const rawValue = e.target.value.replace(/[^0-9]/g, '') // 숫자인지 검증
@@ -22,9 +28,26 @@ const TransactionInputForm = () => {
     }
     const formattedAmount = '￦ ' + Number(rawValue).toLocaleString()
     setTransactionAmount(formattedAmount)
+    setErrorAmount('')
   }
 
   const handleSubmit = () => {
+    let hasError = false
+    if (trasactionText === '') {
+      setErrorText('내용을 입력해주세요!')
+      hasError = true
+    } else {
+      setErrorText('')
+    }
+
+    if (transactionAmount === '') {
+      setErrorAmount('금액을 입력해주세요!')
+      hasError = true
+    } else {
+      setErrorAmount('')
+    }
+    if (hasError) return
+
     addItem({
       text: trasactionText,
       type: transactionType,
@@ -39,13 +62,16 @@ const TransactionInputForm = () => {
       <h2>새로운 거래 추가</h2>
 
       <div className={css.inputForm}>
-        <InputField
-          label="텍스트"
-          id="contents"
-          value={trasactionText}
-          placeholder="내용을 입력해 주세요."
-          onChange={handleContentsChange}
-        />
+        <div className={css.textWrap}>
+          <InputField
+            label="텍스트"
+            id="contents"
+            value={trasactionText}
+            placeholder="내용을 입력해 주세요."
+            onChange={handleContentsChange}
+          />
+          {errorText && <p className={css.error}>{errorText}</p>}
+        </div>
 
         <div className={css.radioGroup}>
           <RadioButton
@@ -65,13 +91,16 @@ const TransactionInputForm = () => {
             onChange={handleRadioChange}
           />
         </div>
-        <InputField
-          label="금액"
-          id="amount"
-          value={transactionAmount}
-          placeholder="금액을 입력해 주세요."
-          onChange={handleAmountChange}
-        />
+        <div className={css.amountWrap}>
+          <InputField
+            label="금액"
+            id="amount"
+            value={transactionAmount}
+            placeholder="금액을 입력해 주세요."
+            onChange={handleAmountChange}
+          />
+          {errorAmount && <p className={css.error}>{errorAmount}</p>}
+        </div>
 
         <button className={css.button} onClick={handleSubmit}>
           거래 추가
