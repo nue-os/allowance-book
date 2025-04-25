@@ -1,17 +1,20 @@
 import React from 'react'
 import css from './IncomeExpenseSummary.module.css'
+import { calExpense, calIncome } from '../utils/calculate'
+import { useSelector } from 'react-redux'
 
 const IncomeExpenseSummary = () => {
+  const { transactions } = useSelector(state => state.transactions)
   return (
     <div className={css.summaryCon}>
       <div className={css.income}>
         <strong>수입</strong>
-        <span>{`￦300,000`}</span>
+        <span>{`￦${Number(calIncome(transactions)).toLocaleString()}`}</span>
       </div>
       <span className={css.bar}></span>
       <div className={css.expense}>
         <strong>지출</strong>
-        <span>{`￦100,000`}</span>
+        <span>{`￦${Number(calExpense(transactions)).toLocaleString()}`}</span>
       </div>
     </div>
   )
