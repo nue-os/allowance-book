@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'HakgyoansimDunggeunmisoTTF-B';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2')
+    format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ChosunGu';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'ChosunGu', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+body {
+  background-color: #eaeaea;
+}
+
+main {
+  width: calc(100% - 4rem);
+  margin: auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+main h1 {
+  font-family: 'HakgyoansimDunggeunmisoTTF-B', sans-serif;
+  text-align: center;
+}
