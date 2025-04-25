@@ -1,0 +1,26 @@
+.button {
+  border: none;
+  outline: none;
+  border-radius: var(--fs8);
+  padding: var(--fs12);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.primary {
+  color: white;
+  background-color: rgb(164, 126, 207);
+}
+.red {
+  color: white;
+  background-color: rgb(255, 102, 102);
+}
+.white {
+  color: black;
+  background-color: white;
+  border: 1px solid gray;
+}
