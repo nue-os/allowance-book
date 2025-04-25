@@ -48,10 +48,13 @@ const TransactionInputForm = () => {
     }
     if (hasError) return
 
+    // ₩를 제거하고 숫자만 추출
+    const amountNumber = Number(transactionAmount.replace(/[^0-9]/g, ''))
+
     addItem({
       text: trasactionText,
       type: transactionType,
-      amount: transactionAmount,
+      amount: amountNumber,
     })
     setTransactionText('')
     setTransactionType('income')
