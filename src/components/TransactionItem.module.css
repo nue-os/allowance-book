@@ -5,10 +5,30 @@
   background-color: white;
   border-radius: var(--fs8);
   border-right: 6px solid;
+  cursor: pointer;
+  position: relative;
+}
+.itemWrap:hover {
+  background-color: lightgray;
+  margin-left: var(--fs26);
 }
 .income {
   border-right-color: rgb(58, 206, 58);
 }
 .expense {
   border-right-color: rgb(255, 102, 102);
+}
+
+.removeBtn {
+  outline: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  padding: var(--fs8);
+  background-color: rgb(255, 102, 102);
+  color: white;
+  text-align: center;
+  cursor: pointer;
 }

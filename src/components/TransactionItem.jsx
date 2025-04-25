@@ -8,6 +8,7 @@ const TransactionItem = ({ text, amount, type }) => {
       <p>
         {type === 'income' ? '+' : '-'}￦{amount}
       </p>
+      <button className={css.removeBtn}>X</button>
     </div>
   )
 }
