@@ -1,0 +1,14 @@
+.itemWrap {
+  padding: var(--fs12) var(--fs16);
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: var(--fs8);
+  border-right: 6px solid;
+}
+.income {
+  border-right-color: rgb(58, 206, 58);
+}
+.expense {
+  border-right-color: rgb(255, 102, 102);
+}
