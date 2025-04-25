@@ -1,0 +1,38 @@
+input[type='radio'] {
+  display: none;
+}
+
+.radioContainer label {
+  position: relative;
+  padding-left: var(--fs26);
+  cursor: pointer;
+}
+
+.radioContainer label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--fs16);
+  height: var(--fs16);
+  border-radius: 50%;
+  background-color: white;
+  transition: 0.3s;
+}
+
+input[type='radio']:checked + label::before {
+  background-color: gray;
+}
+
+input[type='radio']:checked + label::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  left: var(--fs8);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: white;
+}
