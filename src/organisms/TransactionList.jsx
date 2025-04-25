@@ -10,11 +10,15 @@ const TransactionList = () => {
   return (
     <div className={css.listCon}>
       <h2>내역</h2>
-      <div className={css.list}>
-        {transactions.map(item => (
-          <TransactionItem key={item.id} text={item.text} amount={item.amount} type={item.type} />
-        ))}
-      </div>
+      {transactions.length === 0 ? (
+        <div className={css.empty}>내역을 채워주세요.</div>
+      ) : (
+        <div className={css.list}>
+          {transactions.map(item => (
+            <TransactionItem key={item.id} text={item.text} amount={item.amount} type={item.type} />
+          ))}
+        </div>
+      )}
     </div>
   )
 }

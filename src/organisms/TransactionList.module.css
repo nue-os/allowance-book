@@ -10,3 +10,8 @@
   gap: var(--fs12);
   overflow-y: auto;
 }
+
+.empty {
+  padding: var(--fs64) 0;
+  text-align: center;
+}
