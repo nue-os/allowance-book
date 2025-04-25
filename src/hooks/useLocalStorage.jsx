@@ -1,6 +1,10 @@
 import React, { useCallback } from 'react'
+import { useDispatch } from 'react-redux'
+import { addTransaction } from '../store/transactionsSlice'
 
 const useLocalStorage = key => {
+  const dispatch = useDispatch()
+
   const getList = useCallback(() => {
     try {
       const stored = localStorage.getItem(key)
@@ -16,8 +20,10 @@ const useLocalStorage = key => {
       try {
         const list = getList()
         const id = list.length > 0 ? list[list.length - 1].id + 1 : 1
-        const newList = [...list, { ...item, id }]
+        const newItem = { ...item, id }
+        const newList = [...list, newItem]
         localStorage.setItem(key, JSON.stringify(newList))
+        dispatch(addTransaction(newItem))
       } catch (err) {
         console.log('[error] ', err)
       }
