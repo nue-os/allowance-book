@@ -38,9 +38,12 @@
 }
 
 html,
-body,
-#root {
+#root,
+body {
   height: 100%;
+}
+
+body {
   background-color: #eaeaea;
 }
 
@@ -48,7 +51,7 @@ main {
   height: 100%;
   width: calc(100% - 4rem);
   margin: auto;
-  padding: 20px 0;
+  padding: var(--fs33) 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -63,13 +66,16 @@ main > section {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr minmax(100px, 450px);
   gap: var(--fs33);
 }
 
 @media (max-width: 768px) {
+  html {
+    height: auto;
+  }
   main > section {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 2fr 2fr;
+    grid-template-rows: 1fr 1fr auto minmax(100px, 450px);
   }
 }

@@ -1,0 +1,12 @@
+.listCon {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs12);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs12);
+  overflow-y: auto;
+}
