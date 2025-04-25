@@ -13,7 +13,16 @@ const TransactionInputForm = () => {
 
   const handleContentsChange = e => setTransactionText(e.target.value)
   const handleRadioChange = e => setTransactionType(e.target.value)
-  const handleAmountChange = e => setTransactionAmount(e.target.value)
+  const handleAmountChange = e => {
+    const rawValue = e.target.value.replace(/[^0-9]/g, '') // 숫자인지 검증
+
+    if (rawValue === '') {
+      setTransactionAmount('')
+      return
+    }
+    const formattedAmount = '￦ ' + Number(rawValue).toLocaleString()
+    setTransactionAmount(formattedAmount)
+  }
 
   const handleSubmit = () => {
     addItem({
