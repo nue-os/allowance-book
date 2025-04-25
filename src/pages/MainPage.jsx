@@ -1,6 +1,7 @@
 import React from 'react'
 import BalanceDisplay from '../organisms/BalanceDisplay'
 import IncomeExpenseSummary from '../organisms/IncomeExpenseSummary'
+import TransactionInputForm from '../organisms/TransactionInputForm'
 
 const MainPage = () => {
   return (
@@ -9,7 +10,7 @@ const MainPage = () => {
       <section>
         <BalanceDisplay />
         <IncomeExpenseSummary />
-        <div>거래 입력 폼</div>
+        <TransactionInputForm />
         <div>거래 내역</div>
       </section>
     </main>

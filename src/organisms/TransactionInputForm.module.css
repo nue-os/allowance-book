@@ -1,0 +1,30 @@
+.inputFormCon {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs12);
+}
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs20);
+}
+
+.radioGroup {
+  display: flex;
+  gap: var(--fs16);
+}
+
+.button {
+  color: white;
+  background-color: rgb(164, 126, 207);
+  border: none;
+  outline: none;
+  border-radius: var(--fs8);
+  padding: var(--fs12);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
