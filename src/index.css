@@ -27,13 +27,25 @@
   font-weight: normal;
   font-style: normal;
   line-height: 1.6;
+
+  --fs8: 8px;
+  --fs12: 12px;
+  --fs16: 16px;
+  --fs20: 20px;
+  --fs26: 24px;
+  --fs33: 33px;
+  --fs64: 64px;
 }
 
-body {
+html,
+body,
+#root {
+  height: 100%;
   background-color: #eaeaea;
 }
 
 main {
+  height: 100%;
   width: calc(100% - 4rem);
   margin: auto;
   padding: 20px 0;
@@ -42,19 +54,22 @@ main {
   gap: 2rem;
 }
 
-main h1 {
+main > h1 {
   font-family: 'HakgyoansimDunggeunmisoTTF-B', sans-serif;
   text-align: center;
 }
 
-main section {
+main > section {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  grid-template-rows: 1fr 2fr;
+  gap: var(--fs33);
 }
 
 @media (max-width: 600px) {
-  main section {
+  main > section {
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 2fr 2fr;
   }
 }

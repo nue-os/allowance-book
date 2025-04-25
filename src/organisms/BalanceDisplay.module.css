@@ -1,0 +1,19 @@
+.balanceCon {
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--fs8);
+  font-weight: bold;
+  background-color: white;
+  border: 1px solid skyblue;
+  border-radius: var(--fs16);
+}
+
+.balanceCon > strong {
+  font-size: var(--fs26);
+}
+
+.balanceCon > span {
+  font-size: var(--fs20);
+}
