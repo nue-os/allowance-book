@@ -15,7 +15,13 @@ const TransactionList = () => {
       ) : (
         <div className={css.list}>
           {transactions.map(item => (
-            <TransactionItem key={item.id} text={item.text} amount={item.amount} type={item.type} />
+            <TransactionItem
+              key={item.id}
+              id={item.id}
+              text={item.text}
+              amount={item.amount}
+              type={item.type}
+            />
           ))}
         </div>
       )}

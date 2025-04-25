@@ -32,3 +32,8 @@
   text-align: center;
   cursor: pointer;
 }
+
+.btnWrap {
+  display: flex;
+  gap: var(--fs16);
+}
