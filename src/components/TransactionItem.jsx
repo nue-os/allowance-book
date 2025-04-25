@@ -19,7 +19,7 @@ const TransactionItem = ({ id, text, amount, type }) => {
     <div className={`${type === 'income' ? css.income : css.expense} ${css.itemWrap}`}>
       <p>{text}</p>
       <p>
-        {type === 'income' ? '+' : '-'}￦{amount}
+        {type === 'income' ? '+' : '-'}￦{amount.toLocaleString()}
       </p>
       <button className={css.removeBtn} onClick={handleModalOpen}>
         X
