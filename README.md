@@ -61,3 +61,9 @@ https://nue-os.github.io/allowance-book/
 - Redux Toolkit (상태 관리)
 - CSS Module (스타일 관리)
 - localStorage (데이터 저장)
+
+<br/>
+
+## 📋 블로그 정리
+
+https://nueos.tistory.com/216
